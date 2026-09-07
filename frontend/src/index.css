@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #FFD700;
+  --color-brand-black: #0c0c0c;
+  --color-brand-gray: #1a1a1a;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-roboto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-brand-black);
+  background-image: radial-gradient(circle at center, #1a1a1a 0%, #0c0c0c 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .font-oswald {
+  font-family: var(--font-oswald);
+  text-transform: uppercase;
+}
+
+/* Custom Biker Animations */
+@keyframes engineRev {
+  0% { transform: scale(1) translateY(0); }
+  25% { transform: scale(1.02) translateY(-2px); }
+  50% { transform: scale(0.98) translateY(1px); }
+  75% { transform: scale(1.01) translateY(-1px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.animate-rev:hover {
+  animation: engineRev 0.3s ease-in-out infinite;
+}
+
+.glass-panel {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar for the table */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700; 
+}
